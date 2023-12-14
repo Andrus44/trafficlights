@@ -1,0 +1,72 @@
+body {
+    border-color: aquamarine;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.traffic-light {
+    position: relative;
+    width: 100px;
+    height: 320px;
+}
+
+.red, .yellow, .green {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transform: translateY(0);
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.red {
+    background-color: red;
+    animation-name: moveRed;
+}
+
+.yellow {
+    background-color: yellow;
+    animation-name: moveYellow;
+}
+
+.green {
+    background-color: green;
+    animation-name: moveGreen;
+}
+
+@keyframes moveRed {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(100px);
+    }
+}
+
+@keyframes moveYellow {
+    0%, 50%, 100% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(160px);
+    }
+}
+
+@keyframes moveGreen {
+    0%, 50% {
+        transform: translateY(0);
+    }
+    25%, 75% {
+        transform: translateY(100px);
+    }
+    100% {
+        transform: translateY(200px);
+    }
+}
